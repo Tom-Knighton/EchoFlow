@@ -1,0 +1,45 @@
+{
+  "schemaNamespace" : "EchoFlow.API",
+  "input" : {
+    "operationSearchPaths" : [
+      "**/*.graphql"
+    ],
+    "schemaSearchPaths" : [
+      "**/*.graphqls"
+    ]
+  },
+  "output" : {
+    "testMocks" : {
+      "none" : {
+      }
+    },
+    "schemaTypes" : {
+      "path" : "./EchoFlow.API",
+      "moduleType" : {
+        "embeddedInTarget" : {
+          "name" : "API",
+          "accessModifier": "public"
+        }
+      }
+    },
+    "operations" : {
+      "inSchemaModule" : {
+      }
+    }
+  },
+  "schemaDownload": {
+      "downloadMethod": {
+          "introspection": {
+              "endpointURL": "https://localhost:7120/graphql/",
+              "httpMethod": {
+                  "POST": {}
+              },
+              "includeDeprecatedInputValues": false,
+              "outputFormat": "SDL"
+          }
+      },
+      "downloadTimeout": 60,
+      "headers": [],
+      "outputPath": "./schema.graphqls"
+  },
+}

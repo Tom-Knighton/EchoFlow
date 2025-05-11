@@ -6,9 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E2715DF42DC692C8001A7E72 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2715DF32DC692C8001A7E72 /* Auth0.plist */; };
+		E2F8ECEF2DC02780001E7C5F /* API in Frameworks */ = {isa = PBXBuildFile; productRef = E2F8ECEE2DC02780001E7C5F /* API */; };
+		E2F8ECF12DC02780001E7C5F /* Design in Frameworks */ = {isa = PBXBuildFile; productRef = E2F8ECF02DC02780001E7C5F /* Design */; };
+		E2F8ECF32DC02780001E7C5F /* Env in Frameworks */ = {isa = PBXBuildFile; productRef = E2F8ECF22DC02780001E7C5F /* Env */; };
+		E2F8ECF52DC02780001E7C5F /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = E2F8ECF42DC02780001E7C5F /* Models */; };
+		E2F8ECF72DC02780001E7C5F /* Onboarding in Frameworks */ = {isa = PBXBuildFile; productRef = E2F8ECF62DC02780001E7C5F /* Onboarding */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		E2715DF32DC692C8001A7E72 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		E2F8ECD42DBED3FB001E7C5F /* EchoFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EchoFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E2F8ECE82DC02576001E7C5F /* Exceptions for "Packages" folder in "EchoFlow" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				API,
+				Design,
+				Env,
+				Models,
+				Onboarding,
+			);
+			target = E2F8ECD32DBED3FB001E7C5F /* EchoFlow */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E2F8ECD62DBED3FB001E7C5F /* EchoFlow */ = {
@@ -18,6 +42,9 @@
 		};
 		E2F8ECE62DBED41B001E7C5F /* Packages */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E2F8ECE82DC02576001E7C5F /* Exceptions for "Packages" folder in "EchoFlow" target */,
+			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
@@ -28,6 +55,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F8ECF32DC02780001E7C5F /* Env in Frameworks */,
+				E2F8ECF12DC02780001E7C5F /* Design in Frameworks */,
+				E2F8ECF72DC02780001E7C5F /* Onboarding in Frameworks */,
+				E2F8ECF52DC02780001E7C5F /* Models in Frameworks */,
+				E2F8ECEF2DC02780001E7C5F /* API in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,8 +69,10 @@
 		E2F8ECCB2DBED3FA001E7C5F = {
 			isa = PBXGroup;
 			children = (
+				E2715DF32DC692C8001A7E72 /* Auth0.plist */,
 				E2F8ECD62DBED3FB001E7C5F /* EchoFlow */,
 				E2F8ECE62DBED41B001E7C5F /* Packages */,
+				E2F8ECED2DC02780001E7C5F /* Frameworks */,
 				E2F8ECD52DBED3FB001E7C5F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +83,13 @@
 				E2F8ECD42DBED3FB001E7C5F /* EchoFlow.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E2F8ECED2DC02780001E7C5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +113,11 @@
 			);
 			name = EchoFlow;
 			packageProductDependencies = (
+				E2F8ECEE2DC02780001E7C5F /* API */,
+				E2F8ECF02DC02780001E7C5F /* Design */,
+				E2F8ECF22DC02780001E7C5F /* Env */,
+				E2F8ECF42DC02780001E7C5F /* Models */,
+				E2F8ECF62DC02780001E7C5F /* Onboarding */,
 			);
 			productName = EchoFlow;
 			productReference = E2F8ECD42DBED3FB001E7C5F /* EchoFlow.app */;
@@ -116,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2715DF42DC692C8001A7E72 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EchoFlow/EchoFlow.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EchoFlow/Preview Content\"";
@@ -267,15 +315,16 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = online.tomk.EchoFlow;
+				PRODUCT_BUNDLE_IDENTIFIER = "online.tomk.echoflow-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -291,6 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EchoFlow/EchoFlow.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EchoFlow/Preview Content\"";
@@ -306,15 +356,16 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = online.tomk.EchoFlow;
+				PRODUCT_BUNDLE_IDENTIFIER = "online.tomk.echoflow-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -346,6 +397,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E2F8ECEE2DC02780001E7C5F /* API */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = API;
+		};
+		E2F8ECF02DC02780001E7C5F /* Design */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Design;
+		};
+		E2F8ECF22DC02780001E7C5F /* Env */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Env;
+		};
+		E2F8ECF42DC02780001E7C5F /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
+		};
+		E2F8ECF62DC02780001E7C5F /* Onboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Onboarding;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E2F8ECCC2DBED3FA001E7C5F /* Project object */;
 }
