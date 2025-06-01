@@ -6,6 +6,7 @@
 //
 import Foundation
 @preconcurrency import Apollo
+import ApolloAPI
 
 class AuthorizationInterceptor: ApolloInterceptor {
     public var id: String = UUID().uuidString
@@ -20,7 +21,7 @@ class AuthorizationInterceptor: ApolloInterceptor {
             if let token {
                 request.addHeader(name: "Authorization", value: "Bearer \(token)")
             }
-        
+            
             chain.proceedAsync(
                 request: request,
                 response: response,
@@ -73,8 +74,7 @@ public struct Client {
     }
 }
 
-extension Client {
-    
+extension ApolloClient {
     public func fetch<Query: GraphQLQuery>(query: Query) async throws -> GraphQLResult<Query.Data>{
         try await withCheckedThrowingContinuation { continuation in
             self.fetch(query: query, cachePolicy: .returnCacheDataElseFetch) { result in
@@ -88,6 +88,23 @@ extension Client {
                     break
                 }
             }
+        }
+    }
+}
+
+extension GraphQLResult {
+    func isFinalForCachePolicy(_ cachePolicy: CachePolicy) -> Bool {
+        switch cachePolicy {
+        case .returnCacheDataElseFetch:
+            return true
+        case .fetchIgnoringCacheData:
+            return source == .server
+        case .fetchIgnoringCacheCompletely:
+            return source == .server
+        case .returnCacheDataDontFetch:
+            return source == .cache
+        case .returnCacheDataAndFetch:
+            return source == .server
         }
     }
 }

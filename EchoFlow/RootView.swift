@@ -7,11 +7,12 @@
 
 import SwiftUI
 import Onboarding
+import AppRouter
 import API
 import Env
 
 struct RootView: View {
-    @State private var router: Router = .init()
+    @State private var router = EchoFlowRouter(initialTab: .home)
     
     var body: some View {
         TabView(selection: $router.selectedTab) {
@@ -21,6 +22,9 @@ struct RootView: View {
                         .tag(tab)
                 }
             }
+        }
+        .sheet(item: $router.presentedSheet) { presentedSheet in
+            
         }
         .environment(router)
     }

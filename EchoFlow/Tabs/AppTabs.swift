@@ -7,9 +7,10 @@
 
 import SwiftUI
 import Env
+import AppRouter
 
 struct AppTabRootView: View {
-    @Environment(Router.self) private var router
+    @Environment(EchoFlowRouter.self) private var router
     
     let tab: AppTab
     

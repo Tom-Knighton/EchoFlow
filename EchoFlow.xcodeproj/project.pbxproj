@@ -25,6 +25,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				API,
+				Dashboard,
 				Design,
 				Env,
 				Models,

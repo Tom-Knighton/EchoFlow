@@ -1,13 +1,22 @@
 {
-  "originHash" : "fe4b80e9e4d67f6532bbb6bf8cc0f40eeab266a18cd4784710ae62d46d66c50c",
+  "originHash" : "406e0e404dfb7bff0abf1b77cec908405668b102aebdee0a9ccec0758bdc0289",
   "pins" : [
     {
       "identity" : "apollo-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apollographql/apollo-ios.git",
       "state" : {
-        "revision" : "6ecc75281dab2fa231cb0d5fed3a3713826fecae",
-        "version" : "1.21.0"
+        "revision" : "39fea7617346c0731be25f61afd537e7032fb562",
+        "version" : "1.22.0"
+      }
+    },
+    {
+      "identity" : "approuter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dimillian/AppRouter.git",
+      "state" : {
+        "revision" : "72f63f4312a231ab2706234b9e99c4b71651f38c",
+        "version" : "1.0.2"
       }
     },
     {

@@ -4,8 +4,10 @@
 //
 //  Created by Tom Knighton on 02/02/2025.
 //
+import AppRouter
 
-public enum AppTab: String, CaseIterable, Identifiable, Hashable, Sendable {
+public typealias EchoFlowRouter = Router<AppTab, RouterDestination, SheetDestination>
+public enum AppTab: String, TabType, CaseIterable {
     case home
     
     public var id: String { rawValue }
